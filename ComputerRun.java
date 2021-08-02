@@ -6,4 +6,5 @@ public class ComputerRun {
         Computer c2 = new Computer (13.4f, 3.0f, "black", (short) 8, 500);
 
     }
+
 }
