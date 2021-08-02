@@ -26,12 +26,20 @@ public class HWString {
 
          ●      Try to ask the user to write the day, month and year of the birthday in the console. Read all values and create a Date, LocalData and LocalDateTime objects and print out these in the console.*/
 
-        //String string = "m o m  ";
+        String polindrom = "m o m  ";
+        char [] array = new char [polindrom.length()] ;
         //String[] arrayString= string.split("");
         //char arrayChar [] = new char[string.length()];
         //int j = 0;
         //char characterFromString;
-        //for (int i = 0; i < arrayString.length; i++) {
+        int j = 0 ;
+        for (int i = 0; (i < polindrom.length() && ("polindrom.charAt(i)".matches("[a-zA-Z]"))); i++) {
+            array[j] = polindrom.charAt(i);
+            System.out.print(array[j]);
+            j++;
+
+        }
+
          //   if (arrayString[i].matches("[a-zA-Z]")) {
           //      char characterToCheck = arrayString[i].charAt(0);
            //     arrayChar[i] = characterToCheck;
