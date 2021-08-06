@@ -77,7 +77,8 @@ public class HeroApp17 {
         System.out.println(theName + " is the best district to live in");
 
         //delete the first district
-        //????????????
+        District district2 = new District();
+        System.out.println(district2.toString());
 
     }
 }

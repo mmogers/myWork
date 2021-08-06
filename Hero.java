@@ -96,7 +96,7 @@
             this.deedTime = deedTime;
         }
     }
-
+//removing heroType for Villian
 enum HeroType{
     Hero,
     Villian
