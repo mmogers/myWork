@@ -1,3 +1,4 @@
+//Hero, HeroType, District, HeroApp17, HeroAppMarinaMRun
 public class HeroAppMarinaMRun {
     public static void main(String[] args) {
 
@@ -28,8 +29,8 @@ public class HeroAppMarinaMRun {
 
         //how many heroes with level 1:
         int counter = 0;
-        for (Hero hero: metropole) {
-            if(hero.calculatedLevel() == 1){
+        for (Hero hero : metropole) {
+            if (hero.calculatedLevel() == 1) {
                 counter++;
             }
         }
@@ -37,8 +38,8 @@ public class HeroAppMarinaMRun {
 
         //more than 1 level heroes
         counter = 0;
-        for (Hero hero:metropole) {
-            if( hero.calculatedLevel() > 1){
+        for (Hero hero : metropole) {
+            if (hero.calculatedLevel() > 1) {
                 counter++;
             }
         }
@@ -51,24 +52,24 @@ public class HeroAppMarinaMRun {
         //    }
         //}
         boolean isJohn = false;
-        for(Hero hero: metropole){
-            if(hero.getName() == "John"){
+        for (Hero hero : metropole) {
+            if (hero.getName() == "John") {
                 isJohn = true;
                 break;
             }
         }
-        if (isJohn){
+        if (isJohn) {
             System.out.println("There is a hero with John name");
-        }else{
+        } else {
             System.out.println("There is no hero with the name John");
         }
         //district1
         District district1 = new District();
-        district1.heroesInTheDistrict.add(hero1);
-        district1.heroesInTheDistrict.add(hero2);
-        district1.heroesInTheDistrict.add(hero3);
+        district1.getHeroesInTheDistrict().add(hero1);
+        district1.getHeroesInTheDistrict().add(hero2);
+        district1.getHeroesInTheDistrict().add(hero3);
         System.out.println(district1.toString());
-        district1.heroesInTheDistrict.remove(0);
+        district1.getHeroesInTheDistrict().remove(0);
         System.out.println(district1.toString());
 
         //int avg = district1.calculateAvgLevelInDistrict();

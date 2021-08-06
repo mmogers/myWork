@@ -1,4 +1,4 @@
-//Hero.java, District.java, HerroApp17- HW , HeroAppMarinaMRun - connected
+//Hero, HeroType, District, HeroApp17, HeroAppMarinaMRun
 /*ask 1.
 
         Copy the Hero class in the new project. Delete the variable workingDistrict and related code parts.
@@ -24,7 +24,7 @@ public class District {
     private String title;
     private String city;
     private int districtID;
-    ArrayList<Hero> heroesInTheDistrict = new ArrayList<Hero>();// dynamic array , check it!!!!!!!!!!!
+    private ArrayList<Hero> heroesInTheDistrict = new ArrayList<Hero>();// dynamic array , check it!!!!!!!!!!!
 
     public District() {
     }
@@ -36,36 +36,38 @@ public class District {
         this.districtID = districtID;
         this.heroesInTheDistrict = heroesInTheDistrict;
     }
-public boolean addNewHero(Hero hero){
+
+    public boolean addNewHero(Hero hero) {
         heroesInTheDistrict.add(hero);//add - an option in the array
         return heroesInTheDistrict.add(hero); //returns true if add succeeded
-}
-public Hero removeHero(int index){
-        return heroesInTheDistrict.remove(index);//returns hero
-}
+    }
 
-public float calculateAvgLevelInDistrict(){
+    public Hero removeHero(int index) {
+        return heroesInTheDistrict.remove(index);//returns hero
+    }
+
+    public float calculateAvgLevelInDistrict() {
         float sum = 0;
         int counter = 0;
-    for (Hero hero: heroesInTheDistrict) {
-        sum += (float) hero.calculatedLevel();
-        counter ++;
-        //System.out.println("sum" + sum);
+        for (Hero hero : heroesInTheDistrict) {
+            sum += (float) hero.calculatedLevel();
+            counter++;
+            //System.out.println("sum" + sum);
+        }
+        return sum / (float) counter;
     }
-    return sum / (float)counter;
-}
-//how many heroes are in the district
-public int NumberOfHeroesInTheDistrict(){
+
+    //how many heroes are in the district
+    public int NumberOfHeroesInTheDistrict() {
         int counter = 0;
-        for (Hero hero: heroesInTheDistrict){
+        for (Hero hero : heroesInTheDistrict) {
             counter++;
         }
         return counter;
-}
+    }
 
 
-
-//TO STRING
+    //TO STRING
     @Override
     public String toString() {
         return "District{" +
