@@ -8,11 +8,7 @@
         private int deedTime;
 
 
-        public Hero() {
-            System.out.println("I'm a new hero");
-        }
-
-        public Hero(String inputName, String inputSurname, String inputNickname, int inputHeroID, HeroType inputHeroType, int inputDeedTime ) {
+        public Hero(String inputName, String inputSurname, String inputNickname, int inputHeroID, HeroType inputHeroType, int inputDeedTime) {
             this.name = inputName;
             this.surname = inputSurname;
             this.nickname = inputNickname;
@@ -21,10 +17,23 @@
             this.deedTime = inputDeedTime;
         }
 
-        /*public String toString()
-        {
-            return "The name is: " + name + " " + surname + " His nickname is: " + nickname + " ID: " + heroID + " The deed time is: " + deedTime;
-        }*/
+        public Hero() {
+        }
+
+
+        public int calculatedLevel() {
+
+            if (deedTime < 20) {
+                return 1;
+            } else if (deedTime >= 20 && deedTime < 40) {
+                return 2;
+            } else if (deedTime >= 40) {
+                return 3;
+            } else {
+                return 0;
+            }
+
+        }
 
         @Override
         public String toString() {
@@ -35,26 +44,10 @@
                     ", heroID=" + heroID +
                     ", heroType='" + heroType + '\'' +
                     ", deedTime=" + deedTime +
-                    '}';
+                    '}' + '\n';
         }
 
-        public int calculatedLevel()
-        {
-
-            if(deedTime < 20){
-                return 1;
-            }
-            else if (deedTime >=20 && deedTime <40){
-                return 2;
-            }
-            else if (deedTime >=40){
-                return 3;
-            }else{
-                return 0;
-            }
-
-        }
-
+        //GETTERS AND SETTERS
         public String getName() {
             return name;
         }
@@ -103,6 +96,7 @@
             this.deedTime = deedTime;
         }
     }
+
 enum HeroType{
     Hero,
     Villian

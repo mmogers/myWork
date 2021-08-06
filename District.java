@@ -1,3 +1,4 @@
+//Hero.java, District.java, HerroApp17- HW , HeroAppMarinaMRun - connected
 /*ask 1.
 
         Copy the Hero class in the new project. Delete the variable workingDistrict and related code parts.
@@ -37,13 +38,29 @@ public class District {
     }
 public boolean addNewHero(Hero hero){
         heroesInTheDistrict.add(hero);//add - an option in the array
-        return heroesInTheDistrict.add(hero); //returns true if add succseeded
+        return heroesInTheDistrict.add(hero); //returns true if add succeeded
 }
 public Hero removeHero(int index){
         return heroesInTheDistrict.remove(index);//returns hero
+}
 
-
-
+public float calculateAvgLevelInDistrict(){
+        float sum = 0;
+        int counter = 0;
+    for (Hero hero: heroesInTheDistrict) {
+        sum += (float) hero.calculatedLevel();
+        counter ++;
+        //System.out.println("sum" + sum);
+    }
+    return sum / (float)counter;
+}
+//how many heroes are in the district
+public int NumberOfHeroesInTheDistrict(){
+        int counter = 0;
+        for (Hero hero: heroesInTheDistrict){
+            counter++;
+        }
+        return counter;
 }
 
 
@@ -54,7 +71,7 @@ public Hero removeHero(int index){
         return "District{" +
                 "title='" + title + '\'' +
                 ", city='" + city + '\'' +
-                ", districtID=" + districtID +
+                ", districtID=" + districtID + '\n' +
                 ", heroesInTheDistrict=" + heroesInTheDistrict +
                 '}';
     }

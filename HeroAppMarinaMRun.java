@@ -1,16 +1,17 @@
 public class HeroAppMarinaMRun {
     public static void main(String[] args) {
-        //initiallizing 3 heroes
-        Hero hero1 = new Hero("Artjoms", "Petrovs", "Aliexpressman", 12345678, HeroType.Hero, 35);
-        Hero hero2 = new Hero("fh", "Black", "FastWing", 123321, HeroType.Hero, (short)12);
-        //Hero hero3 = new Hero("Waterman", "Cooper", "BabyShark", 111111, HeroType.Villian, (short)100);
+
+        //initializing 3 heroes
+        Hero hero1 = new Hero("Artjoms", "Petrovs", "Aliexpressman", 12345678, HeroType.Hero, 100);
+        Hero hero2 = new Hero("fh", "Black", "FastWing", 123321, HeroType.Hero, 30);
+        //Hero hero3 = new Hero("Waterman", "Cooper", "BabyShark", 111111, HeroType.Villian, (short)30);
         Hero hero3 = new Hero();
         hero3.setHeroID(111111);
         hero3.setName("Waterman");
         hero3.setSurname("Cooper");
         hero3.setNickname("BabyShark");
         hero3.setHeroType(HeroType.Villian);
-        hero3.setDeedTime(100);
+        hero3.setDeedTime(30);
 
 
         //System.out.println(" The name of h1 is : " + hero1.getName());
@@ -19,7 +20,7 @@ public class HeroAppMarinaMRun {
         //System.out.println(" Hero h1: " + hero1.toString ());
         //System.out.println(" The level of h2 is: " + hero2.calculatedLevel());
 
-        //MAKING array Metropole of 3 heroes
+        //MAKING array metropole of 3 heroes
         Hero[] metropole = new Hero[3];
         metropole[0] = hero1;
         metropole[1] = hero2;
@@ -44,11 +45,11 @@ public class HeroAppMarinaMRun {
         System.out.println("The number of level more than 1 heroes is: " + counter);
         //if there is name John
         counter = 0;
-        /*for (int i = 0; i < 3; i++) {
-            if(metropole[i].getName() == "John"){
-                counter = 1;
-            }
-        }*/
+        //for (int i = 0; i < 3; i++) {
+        //    if(metropole[i].getName() == "John"){
+        //        counter = 1;
+        //    }
+        //}
         boolean isJohn = false;
         for(Hero hero: metropole){
             if(hero.getName() == "John"){
@@ -61,9 +62,18 @@ public class HeroAppMarinaMRun {
         }else{
             System.out.println("There is no hero with the name John");
         }
-        //---------------------------
+        //district1
         District district1 = new District();
         district1.heroesInTheDistrict.add(hero1);
+        district1.heroesInTheDistrict.add(hero2);
+        district1.heroesInTheDistrict.add(hero3);
         System.out.println(district1.toString());
+        district1.heroesInTheDistrict.remove(0);
+        System.out.println(district1.toString());
+
+        //int avg = district1.calculateAvgLevelInDistrict();
+        System.out.println("the average number of district 1 is: " + district1.calculateAvgLevelInDistrict());
+
+
     }
 }
